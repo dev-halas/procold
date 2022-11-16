@@ -26,7 +26,3 @@
         </div>
     </div>
 </div>
-
-<div style="height: 200vh">
-pageTemplates
-</div>

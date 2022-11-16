@@ -1,0 +1,100 @@
+.productsSection {
+    background-color: $darkBlue;
+    color: $white;
+    padding: 20px 30px;
+    border-radius: 50px 0 0 0;
+    -webkit-border-radius: 50px 0 0 0;
+    -moz-border-radius: 50px 0 0 0;
+    -ms-border-radius: 50px 0 0 0;
+    -o-border-radius: 50px 0 0 0;
+    margin-top: 8vh;
+    margin-bottom: 20px;
+
+    h2 {
+        font-size: clamp(20px, 1.5vw, 36px);
+    }
+}
+
+.productsWrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.productsWrapper--half, .productsTwo--columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.products--item {
+    position: relative;
+    grid-column: span 1;
+    background-color: $white;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5vw 10px 10px 10px;
+    -webkit-border-radius: 5vw 10px 10px 10px;
+    -moz-border-radius: 5vw 10px 10px 10px;
+    -ms-border-radius: 5vw 10px 10px 10px;
+    -o-border-radius: 5vw 10px 10px 10px;
+
+    .buttonOutline {
+        justify-self: flex-end;
+    }
+
+    @include responsive('tablet') {
+        grid-column: span 2;
+    }
+
+    @include responsive('small') {
+        grid-column: span 4;
+        padding: 20px;
+    }
+
+
+}
+
+.products--eco {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 32px;
+    height: 32px;
+}
+
+.products--img {
+    margin-top: 20px;
+    max-width: 80%;
+}
+
+.products--content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+    height: 100%;
+
+    h3 {
+        text-align: center;
+    }
+    small {
+        text-align: center;
+    }
+}
+
+.products--text {
+    margin-top: 30px;
+    text-align: center;
+    span {
+        display: block;
+        margin-top: 15px;
+        font-weight: 500;
+    }
+
+    @include responsive('laptop') {
+        font-size: 12px;
+    }
+}

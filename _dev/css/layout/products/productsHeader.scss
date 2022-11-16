@@ -1,10 +1,14 @@
+.products {
+    margin-bottom: 15vh;
+}
+
 .productsHeader {
     position: relative;
 }
 
 .productsHeader--inner {
     position: relative;
-    padding: 10vh 0;
+    padding-top: 10vh;
     @include responsive('small') {
         padding: 0;
     }
