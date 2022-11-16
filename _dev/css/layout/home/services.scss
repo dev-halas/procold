@@ -1,0 +1,73 @@
+.services {
+    position: relative;
+    background-color: $darkBlue;
+    border-radius: 10vw 0 0 0;
+    -webkit-border-radius: 10vw 0 0 0;
+    -moz-border-radius: 10vw 0 0 0;
+    -ms-border-radius: 10vw 0 0 0;
+    -o-border-radius: 10vw 0 0 0;
+    padding: 10vh 0 15vh 0;
+    color: $white;
+}
+
+.services .shiftedTitle {
+    margin-bottom: 10vh;
+    h2 {
+        color: $azure;
+    }
+    @include responsive('small') {
+        margin-bottom: 5vh;
+    }
+}
+
+.services--wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5vw;
+    row-gap: 5vw;
+    @include responsive('small') {
+        grid-template-columns: 1fr;
+    }
+}
+
+.services--col {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5vh;
+}
+
+.services--item {
+    display: flex;
+    gap: 30px;
+    @include responsive('small') {
+        gap: 10px;
+    }
+}
+
+.services--icon {
+    svg {
+        width: 3.5vw;
+        height: 3.5vw;
+        min-width: 32px;
+        min-height: 32px;
+    }
+}
+
+.services--text {
+    strong {
+        display: block;
+        margin-bottom: 20px;
+        font-size: 20px;
+        @include responsive('small') {
+            font-size: 16px;
+        }
+    }
+
+    p {
+        font-weight: 100;
+        max-width: 80%;
+        @include responsive('small') {
+            max-width: 100%;
+        }
+    }
+}

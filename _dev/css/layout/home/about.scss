@@ -1,0 +1,66 @@
+.about {
+    position: relative;
+    padding: 10vh 0;
+    background-color: $white;
+    border-radius: 0 0 10vw 0;
+    -webkit-border-radius: 0 0 10vw 0;
+    -moz-border-radius: 0 0 10vw 0;
+    -ms-border-radius: 0 0 10vw 0;
+    -o-border-radius: 0 0 10vw 0;
+}
+
+.about--bg {
+    position: absolute;
+    height: 70%;
+    left: -50%;
+    @include responsive('small') {
+        height: 400px;
+        top: 0
+    }
+}
+
+.aboutInner {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    gap: 3vw;
+}
+
+.aboutLeft {
+    grid-column: span 3;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @include responsive('tablet'){
+        grid-column: span 5;
+    }
+}
+
+.aboutRight {
+    grid-column: span 2;
+    @include responsive('tablet'){
+        grid-column: span 5;
+        max-width: 700px;
+        margin: auto;
+    }
+}
+
+.aboutLogos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    @include responsive('tablet'){
+        margin-top: 10px;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+.aboutText {
+    margin: 50px 0;
+    @include responsive('tablet'){
+        margin: 20px 0;
+    }
+}

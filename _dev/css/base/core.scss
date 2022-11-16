@@ -1,0 +1,287 @@
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 10vh;
+    margin-top: 0!important;
+}
+
+$darkBlue: #193441;
+$barBlue: #203E4D;
+$lightBlue: #EDF2F3;
+$white: #ffffff;
+$pink: #F98396;
+$green: #D5EBA2;
+$yellow: #FEF188;
+$azure: #A9DFF3;
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+    font-weight: normal;
+    color: $darkBlue;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: $lightBlue;
+}
+
+main {
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1.4rem;
+}
+
+h1,h2,h3,h4 {
+    line-height: 1.5;
+}
+
+$breakpoints: (
+  'mobile':  480px,
+  'small': 768px,
+  'tablet': 1024px,
+  'laptop':  1440px,
+  'large': 1600px,
+  'fullhd': 1920px
+) !default;
+
+@mixin responsive($breakpoint) {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $breakpoint) {
+      // Prints a media query based on the value
+      @media (max-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
+    }
+   
+    // If the key doesn't exist in the map
+    @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+          + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+
+body {
+    @include responsive('large') {
+        font-size: 16px;
+    }
+    @include responsive('laptop') {
+        font-size: 14px;
+    }
+}
+
+
+$container: 80vw;
+$containerMobile: 90vw;
+
+.container {
+    width: min($container, 1600px);
+    margin: 0 auto;
+    position: relative;
+    @include responsive('tablet') {
+        width: min($containerMobile, 900px);
+    }
+}
+
+@media screen and (max-width: 782px) {
+    html {
+        margin-top: 0px !important;
+    }
+}
+
+#wpadminbar {
+    display: none;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+
+.buttonWhite {
+    color: $darkBlue;
+    background-color: $white;
+    border: none;
+}
+
+.buttonOutline {
+    color: $darkBlue;
+    border: 1.5px solid $darkBlue;
+}
+
+.buttonWhite, .buttonOutline {
+    padding: 14px 72px 14px 36px;
+    display: block;
+    width: fit-content;
+    font-size: 16px;
+    font-weight: 700;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    border-radius: 25px;
+    position: relative;
+    @include responsive('tablet'){
+        font-size: 14px;
+        padding: 10px 62px 10px 24px;
+    }
+}
+
+.buttonWhite:hover, .buttonOutline:hover {
+    background-color: $azure;
+    transition: background-color .2s ease-in-out;
+    -webkit-transition: background-color .2s ease-in-out;
+    -moz-transition: background-color .2s ease-in-out;
+    -ms-transition: background-color .2s ease-in-out;
+    -o-transition: background-color .2s ease-in-out;
+}
+
+.buttonWhite::before, .buttonOutline::before {
+    content: '';
+    position: absolute;
+    right: 24px;
+    width: 28px;
+    height: 24px;
+    z-index: 10;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+}
+
+.buttonWhite::before, .buttonOutline::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28.398' height='14.269' viewBox='0 0 28.398 14.269'%3E%3Cg id='right-arrow' transform='translate(0 -127.369)'%3E%3Cg id='Group_1' data-name='Group 1' transform='translate(0 127.369)'%3E%3Cpath id='Path_1' data-name='Path 1' d='M28.21,134.049h0l-6.454-6.454a.645.645,0,1,0-.91.91l5.35,5.357H.645a.645.645,0,0,0,0,1.291H26.2l-5.35,5.35a.645.645,0,1,0,.91.91l6.454-6.454A.645.645,0,0,0,28.21,134.049Z' transform='translate(0 -127.369)' fill='%23193441'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+.buttonWhite:hover::before, .buttonOutline:hover::before{
+    transition-delay: .1s;
+    transform: rotateY(180deg) rotateX(180deg);
+    -webkit-transform: rotateY(180deg) rotateX(180deg);
+    -moz-transform: rotateY(180deg) rotateX(180deg);
+    -ms-transform: rotateY(180deg) rotateX(180deg);
+    -o-transform: rotateY(180deg) rotateX(180deg);
+}
+
+
+.colorsLine {
+    background: linear-gradient(to right, $pink 0%, $pink 25%, $green 25%, $green 50%, $yellow 50%, $yellow 75%, $azure 75%, $azure 100%);
+    height: 1.25vw;
+    width: 45vw;
+    position: absolute;
+    @include responsive('tablet') {
+        width: 80%;
+        margin: auto;
+    }
+
+    @include responsive('small') {
+        height: 10px;
+        width: 80%;
+        margin: auto;
+    }
+}
+
+.bottomLineLeft {
+    border-radius: 0 0 20px 20px;
+    -webkit-border-radius: 0 0 20px 20px;
+    -moz-border-radius: 0 0 20px 20px;
+    -ms-border-radius: 0 0 20px 20px;
+    -o-border-radius: 0 0 20px 20px;
+    bottom: -1.25vw;
+    left: 10%;
+    @include responsive('small') {
+        bottom: -10px;
+    }
+}
+
+.topLineCenter {
+    border-radius: 0 0 20px 20px;
+    -webkit-border-radius: 0 0 20px 20px;
+    -moz-border-radius: 0 0 20px 20px;
+    -ms-border-radius: 0 0 20px 20px;
+    -o-border-radius: 0 0 20px 20px;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.topLineCenter--reverse{
+    border-radius: 20px 20px 0 0;
+    -webkit-border-radius: 20px 20px 0 0;
+    -moz-border-radius: 20px 20px 0 0;
+    -ms-border-radius: 20px 20px 0 0;
+    -o-border-radius: 20px 20px 0 0;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.bottomLineCenter {
+    border-radius: 20px 20px 0 0;
+    -webkit-border-radius: 20px 20px 0 0;
+    -moz-border-radius: 20px 20px 0 0;
+    -ms-border-radius: 20px 20px 0 0;
+    -o-border-radius: 20px 20px 0 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.shiftedTitle {
+    position: relative;
+    span {
+        text-transform: uppercase;
+        letter-spacing: 8px;
+        @include responsive('small') {
+            font-size: 12px;
+        }
+    }
+
+    h2 {
+        padding-left: 50px;
+        font-weight: 800;
+        font-size: 32px;
+        @include responsive('small') {
+            padding-left: 30px;
+            font-size: 24px;
+        }
+    }
+}

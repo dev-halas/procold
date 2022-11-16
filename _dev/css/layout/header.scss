@@ -1,0 +1,251 @@
+.header {
+    z-index: 999;
+    width: 100%;
+    color: $white;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    background-color: $darkBlue;
+}
+
+.home--header {
+    background-color: transparent;
+    position: absolute;
+}
+
+.site--header {
+    position: sticky;
+}
+
+.header.--active, .header.--scrolled {
+    position: fixed;
+}
+
+.headerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 8vw;
+    margin: auto;
+    flex-wrap: wrap;
+    @include responsive('tablet') {
+        padding-right: 0;
+        padding-left: 5vw;
+    }
+}
+
+.headerLogo {
+    padding: 20px 0;
+    display: block;
+    z-index: 99;
+    img {
+        width: clamp(150px, 12vw, 230px);
+    }
+}
+
+.headerNavbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    width: 50%;
+
+    @include responsive('tablet') {
+        width: 100%;
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 0;
+    }
+}
+
+.navLinks {
+    width: 100%;
+
+    ul {
+        display: flex;
+        justify-content: center;
+        @include responsive('tablet') {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    a {
+        display: block;
+        padding: 10px 1.8vw;
+        opacity: .5;
+        font-size: clamp(14px, 1vw, 24px);
+        @include responsive('tablet') {
+            font-size: 30px;
+            padding: 10px;
+            opacity: .8;
+            font-weight: 600;
+        }
+    }
+
+}
+
+.headerLang {
+    position: absolute;
+    width: 8vw;
+    right: 0;
+    top: 0
+}
+
+
+.hamburger{
+    display: none;
+}
+
+@include responsive('tablet') {
+
+    .hamburger{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: max(50px, 8vw);
+        height: 10vh;
+        z-index: 999;
+        cursor: pointer;
+        transition: all 0.7s ease;
+    }
+
+    .hamburgerLines {
+        width: 36px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    /*Styling Hamburger Icon*/
+    .hamburger__line1, 
+    .hamburger__line2, 
+    .hamburger__line3{
+        height: 3px;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger__line1 {
+        width: 32px;
+        background: $yellow;
+    }
+
+    .hamburger__line2 {
+        width: 36px;
+        background: $pink;
+    }
+
+    .hamburger__line3 {
+        width: 28px;
+        margin-right: auto;
+        background: $lightBlue;
+    }
+
+    /*Animating Hamburger Icon on Click*/
+    .--active .hamburger span:nth-child(1){
+        transform: rotate(-45deg) translate(-6px,7px);
+        -webkit-transform: rotate(-45deg) translate(-6px,7px);
+        -moz-transform: rotate(-45deg) translate(-6px,7px);
+        -ms-transform: rotate(-45deg) translate(-6px,7px);
+        -o-transform: rotate(-45deg) translate(-6px,7px);
+        width: 30px;
+    }
+    .--active .hamburger span:nth-child(2) {
+        width:0;
+        align-self: center;
+        transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+}
+    .--active .hamburger span:nth-child(3){
+        transform: rotate(45deg) translate(-6px,-7px);
+        -webkit-transform: rotate(45deg) translate(-6px,-7px);
+        -moz-transform: rotate(45deg) translate(-6px,-7px);
+        -ms-transform: rotate(45deg) translate(-6px,-7px);
+        -o-transform: rotate(45deg) translate(-6px,-7px);
+        width: 30px;
+    }
+
+
+    /* NAVBAR ACTIVE in mobile */
+
+    .--active .headerNavbar {
+        height: 100%;
+        background-color: $darkBlue;
+        position: fixed;
+        left: 0;
+        top: 0;
+        visibility: visible;
+        animation: navbarFadeIn .4s ease-in-out both;
+        -webkit-animation: navbarFadeIn .4s ease-in-out both;
+    }
+
+}
+
+@keyframes navbarFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+        -webkit-transform: translateY(-100%);
+        -moz-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+        -o-transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+    }
+}
+
+@keyframes headerFade {
+    from {
+        opacity: .1;
+        transform: translateY(-100%);
+        -webkit-transform: translateY(-100%);
+        -moz-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+        -o-transform: translateY(-100%);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+        -webkit-transform: translateY(0%);
+        -moz-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+        -o-transform: translateY(0%);
+    }
+}
+
+.home--header.scrolled {
+    background-color: transparent;
+    position: fixed;
+}
+
+.site--header.scrolled {
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+}
+
+.scrolled:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 10vh;
+    animation-delay: .5s;
+    background-color: $darkBlue;
+    animation: headerFade .5s both;
+    -webkit-animation: headerFade .5s both;
+    box-shadow: 0 20px 30px rgb(0 0 0 / 20%);
+}

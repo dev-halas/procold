@@ -1,0 +1,27 @@
+@import url("https://unpkg.com/swiper/swiper-bundle.min.css");
+
+@import "./base/reset.scss";
+@import "./base/core.scss";
+
+/* ------ Layouts ------ */
+
+@import "./layout/header.scss";
+
+@import "./layout/home/hero.scss";
+@import "./layout/home/rightBar.scss";
+@import "./layout/home/about.scss";
+@import "./layout/home/homeBlog.scss";
+@import "./layout/home/categories.scss";
+@import "./layout/home/logoCarousel.scss";
+@import "./layout/home/ourProducts.scss";
+@import "./layout/home/reviews.scss";
+@import "./layout/home/services.scss";
+
+
+@import "./layout/products/productsHeader.scss";
+
+
+
+@import "./layout/footer/footer.scss";
+/* ------ Components ------ */
+

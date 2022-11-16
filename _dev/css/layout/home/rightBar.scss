@@ -1,0 +1,50 @@
+.rightBar {
+    width: max(50px, 8vw);
+    background-color: $barBlue;
+    height: 100vh;
+    z-index: 99;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.social_icons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    
+
+    a {
+        padding: 10px 5px;
+    }
+}
+
+.rightBar .social_icons {
+    padding-bottom: 50px;
+}
+
+.footer .social_icons {
+    position: absolute;
+    right: 0;
+    bottom: 150px;
+
+    svg, path {
+        fill: $darkBlue;
+    }
+}
+
+.footer a:hover {
+    svg, path {
+        fill: $azure;
+        transition: all .3s ease-in;
+        -webkit-transition: all .3s ease-in;
+        -moz-transition: all .3s ease-in;
+        -ms-transition: all .3s ease-in;
+        -o-transition: all .3s ease-in;
+    }
+
+}
