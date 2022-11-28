@@ -18,5 +18,8 @@
 			'main_nav' => 'Menu glowne'
 		));
 	}
+
+	//-------------Feature image support single.php ----------//
+	add_theme_support( 'post-thumbnails' );
 	
 ?>

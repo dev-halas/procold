@@ -6,6 +6,7 @@
 /* ------ Layouts ------ */
 
 @import "./layout/header.scss";
+@import "./layout/blog.scss";
 
 @import "./layout/home/hero.scss";
 @import "./layout/home/rightBar.scss";
@@ -21,6 +22,9 @@
 @import "./layout/products/productsHeader.scss";
 @import "./layout/products/ProductsWrapper.scss";
 
+
+@import "./layout/product/product.scss";
+@import "./layout/product/productDetails.scss";
 
 @import "./layout/footer/footer.scss";
 /* ------ Components ------ */

@@ -25,6 +25,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+
+    small {
+        height: 42px;
+        margin-top: 10px;
+        display: block;
+    }
 }
 
 .products--item {
