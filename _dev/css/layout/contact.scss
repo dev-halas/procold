@@ -1,0 +1,208 @@
+.contact{
+    position: relative;
+    padding-bottom: 200px;
+
+    #map {
+        min-height: 500px;
+        border-radius: 0 0 8vw 0;
+        -webkit-border-radius: 0 0 8vw 0;
+        -moz-border-radius: 0 0 8vw 0;
+        -ms-border-radius: 0 0 8vw 0;
+        -o-border-radius: 0 0 8vw 0;
+    }
+
+    .bottomLineLeft {
+        top: 0;
+        left: 0;
+    }
+}
+
+.contactMap {
+    background-color: $darkBlue;
+    position: relative;
+}
+
+.contactInner {
+    position: relative;   
+}
+
+.contactInner--bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 60%;
+    background: $darkBlue;
+    border-radius: 0 0 0 8vw;
+    -webkit-border-radius: 0 0 0 8vw;
+    -moz-border-radius: 0 0 0 8vw;
+    -ms-border-radius: 0 0 0 8vw;
+    -o-border-radius: 0 0 0 8vw;
+}
+
+.contactInner--pattern {
+    width: 48%;
+    height: 60%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    @include responsive('tablet') {
+        width: 100%;
+        height: 220px;
+    }
+}
+
+.contactContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5vw;
+    color: $white;
+    @include responsive('tablet') {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contactForm {
+    input[type="text"], input[type="email"], textarea{
+        width: 100%;
+        padding: 10px 20px;
+        border: none;
+        background-color: $white;
+        border-radius: 25px;
+        -webkit-border-radius: 25px;
+        -moz-border-radius: 25px;
+        -ms-border-radius: 25px;
+        -o-border-radius: 25px;
+        margin-top: 5px;
+    } 
+    label {
+        color: $white;
+    }
+
+    p {
+        margin: 15px 0 10px 0;
+    }
+
+    input[type="submit"] {
+        background-color: $azure;
+        border: none;
+        padding: 12px 36px;
+        border-radius: 25px;
+        -webkit-border-radius: 25px;
+        -moz-border-radius: 25px;
+        -ms-border-radius: 25px;
+        -o-border-radius: 25px;
+    }
+
+    input[type="submit"]:before{
+        content: '';
+        position: absolute;
+        right: 24px;
+        width: 28px;
+        height: 24px;
+        z-index: 10;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28.398' height='14.269' viewBox='0 0 28.398 14.269'%3E%3Cg id='right-arrow' transform='translate(0 -127.369)'%3E%3Cg id='Group_1' data-name='Group 1' transform='translate(0 127.369)'%3E%3Cpath id='Path_1' data-name='Path 1' d='M28.21,134.049h0l-6.454-6.454a.645.645,0,1,0-.91.91l5.35,5.357H.645a.645.645,0,0,0,0,1.291H26.2l-5.35,5.35a.645.645,0,1,0,.91.91l6.454-6.454A.645.645,0,0,0,28.21,134.049Z' transform='translate(0 -127.369)' fill='%23193441'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+    }
+
+    
+    .rodo {
+        span {
+            color: $darkBlue;
+            margin-left: 0;
+        }
+    }
+}
+
+.contactForm--cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    @include responsive('tablet') {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contactContent--adress {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    span {
+        margin-left: 2vw;
+    }
+}
+
+.contactContent--mauser {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    img {
+        max-width: 80%;
+    }
+}
+
+.contactIcons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2vw;
+    margin-top: 8vh;
+    @include responsive('small') {
+        grid-template-columns: 1fr;
+        place-items: center;
+        row-gap: 50px;
+    }
+}
+
+.contactIcon {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    img {
+        max-width: fit-content;
+    }
+
+    @include responsive('small') {
+        text-align: center;
+        align-items: center;
+        gap: 12px;
+    }
+}
+
+.contactIcon--cta {
+    display: flex;
+    gap: 10px;
+
+    a {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        border: 1px solid $darkBlue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    a:hover {
+        background-color: $darkBlue;
+        transition: all .3s ease-in-out;
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -ms-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        img {
+            filter: invert(1);
+            -webkit-filter: invert(1);
+        }       
+    }
+}
+

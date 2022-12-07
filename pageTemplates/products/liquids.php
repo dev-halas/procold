@@ -14,7 +14,7 @@
                     <span>PRODUKT UZUPEŁNIAJĄCY <br> “factory flush”</span>
                 </div>
             </div>
-            <a href="#" class="buttonOutline">sprawdź</a>
+            <a href="<?php echo esc_url(home_url('/')) ?>produkty/factory-eco/" class="buttonOutline">sprawdź</a>
         </div>
         <div class="products--item">
             <img src="<?php echo THEME_URL; ?>_dev/img/products/eco.png" alt="" class="products--eco">
@@ -27,7 +27,7 @@
                     <span>PRODUKT UZUPEŁNIAJĄCY <br> “factory flush”</span>
                 </div>
             </div>
-            <a href="#" class="buttonOutline">sprawdź</a>
+            <a href="<?php echo esc_url(home_url('/')) ?>produkty/factory-eco/" class="buttonOutline">sprawdź</a>
         </div>
         <div class="products--item">
             <img src="<?php echo THEME_URL; ?>_dev/img/products/eco.png" alt="" class="products--eco">
@@ -40,7 +40,7 @@
                     <span>PRODUKT UZUPEŁNIAJĄCY <br> “supercool flush”</span>
                 </div>
             </div>
-            <a href="#" class="buttonOutline">sprawdź</a>
+            <a href="<?php echo esc_url(home_url('/')) ?>produkty/factory-eco/" class="buttonOutline">sprawdź</a>
         </div>
         <div class="products--item">
             <img src="<?php echo THEME_URL; ?>_dev/img/products/eco.png" alt="" class="products--eco">
@@ -53,7 +53,7 @@
                     <span>PRODUKT UZUPEŁNIAJĄCY <br> “factory flush”</span>
                 </div>
             </div>
-            <a href="#" class="buttonOutline">sprawdź</a>
+            <a href="<?php echo esc_url(home_url('/')) ?>produkty/factory-eco/" class="buttonOutline">sprawdź</a>
         </div>
         <div class="products--item">
             <img src="<?php echo THEME_URL; ?>_dev/img/products/GEOTHERMAL.png" class="products--img" />
@@ -65,7 +65,7 @@
                     <span>PRODUKT UZUPEŁNIAJĄCY “factory flush”</span>
                 </div>
             </div>
-            <a href="#" class="buttonOutline">sprawdź</a>
+            <a href="<?php echo esc_url(home_url('/')) ?>produkty/factory-eco/" class="buttonOutline">sprawdź</a>
         </div>
         <div class="products--item">
             <img src="<?php echo THEME_URL; ?>_dev/img/products/FACTORY.png" class="products--img" />
@@ -77,7 +77,7 @@
                     <span>PRODUKT UZUPEŁNIAJĄCY “factory flush”</span>
                 </div>
             </div>
-            <a href="#" class="buttonOutline">sprawdź</a>
+            <a href="<?php echo esc_url(home_url('/')) ?>produkty/factory-eco/" class="buttonOutline">sprawdź</a>
         </div>
     </div>
 </section>

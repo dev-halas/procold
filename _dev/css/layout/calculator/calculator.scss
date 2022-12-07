@@ -1,0 +1,210 @@
+.calculator {
+    background-color: $white;
+    margin-bottom: 200px;
+    overflow: hidden;
+
+    .bottomLineLeft {
+        left: 7.5%;
+        bottom: auto;
+    }
+}
+
+.calcForm {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 100px 0;
+}
+
+.calculatorInner {
+    grid-column: span 3;
+    position: relative;
+    z-index: 10;
+    @include responsive('small') {
+        grid-column: span 5;
+    }
+}
+
+.calculatorFields {
+    max-width: 800px;
+}
+
+.calculatorField {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.pipeLength, .diameterInner {
+    grid-column: span 1;
+    @include responsive('small') {
+        grid-column: span 2;
+    }
+}
+
+.tankCapacity {
+    grid-column: span 2;
+}
+
+.pipeLength, .diameterInner, .tankCapacity {
+    span {
+        font-size: 14px;
+        margin-left: 10px;
+        margin-bottom: 8px;
+        display: block;
+    }
+    input[type="number"] {
+        padding: 10px 20px;
+        width: 100%;
+        border: none;
+        background-color: #f1f1f1;
+        border-radius: 25px;
+        -webkit-border-radius: 25px;
+        -moz-border-radius: 25px;
+        -ms-border-radius: 25px;
+        -o-border-radius: 25px;
+        position: relative;
+    }
+
+    ::placeholder {
+        text-align: right;
+    }
+
+    input[type="number"]::-webkit-inner-spin-button {
+        display: none;
+    }
+}
+
+.calcInput {
+    position: relative;
+
+    span {
+
+        input[type="checkbox"] {
+            position: absolute;
+            cursor: pointer;
+            right: -2px;
+            top: -2px;
+            width: 80px;
+            height: 42px;
+            -webkit-appearance: none;
+            background: #c6c6c6;
+            outline: none;
+            border-radius: 20px;
+            box-shadow: inset 0 0 5px rgba(29, 35, 150, 0.2);
+            transition: 0.7s;
+        }
+        
+        input:checked[type="checkbox"] {
+          background: #555;
+        }
+        
+        input[type="checkbox"]:before {
+          content: 'cm';
+          text-align: center;
+          line-height: 42px;
+          font-weight: bold;
+          position: absolute;
+          width: 44px;
+          height: 44px;
+          top: -1px;
+          left: 0;
+          background: #ffffff;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          transition: .5s;
+          transform: scale(1.1);
+          -webkit-transform: scale(1.1);
+          -moz-transform: scale(1.1);
+          -ms-transform: scale(1.1);
+          -o-transform: scale(1.1);
+          border-radius: 50%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+        }
+        
+        input:checked[type="checkbox"]:before {
+          content: 'm';
+          left: 40px;
+        }
+    }
+
+    .tankUnit {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
+}
+
+.calcButtons {
+    display: flex;
+    margin-top: 50px;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.calcResult, .addNextCalc {
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    font-weight: 600;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    @include responsive('small') {
+        width: 100%;
+    }
+}
+
+.calcResult {
+    color: $darkBlue;
+    border: 1px solid $darkBlue;
+}
+
+.addNextCalc {
+    background-color: $azure;
+    color: $darkBlue;
+    border: 1px solid $azure;
+}
+
+.calcResult:hover, .addNextCalc:hover {
+    padding: 10px 40px;
+}
+
+.resultWrapper {
+    color: $white;
+    padding: 2vw 4vw;
+    margin-top: 50px;
+    max-width: 500px;
+    background-color: $darkBlue;
+    border-radius: 0 0 100px 0;
+    -webkit-border-radius: 0 0 100px 0;
+    -moz-border-radius: 0 0 100px 0;
+    -ms-border-radius: 0 0 100px 0;
+    -o-border-radius: 0 0 100px 0;
+
+    .result {
+        color: $azure; 
+        font-size: 50px;
+    }
+}
+
+.calcBG {
+    position: absolute;
+    right: -20%;
+    top: 0;
+    max-width: 70%;
+    @include responsive('small') {
+        right: -90%;
+        top: 0;
+        max-width: 200%;
+        opacity: .3;
+    }
+}

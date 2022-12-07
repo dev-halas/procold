@@ -52,8 +52,40 @@
             <div class="avaliableCapacity">
                 <p><strong>Dostępne pojemniki: </strong></p>
                 <div class="avaliableCapacity--inner">
-
+                    <div class="avaliableCapacity--item">
+                        <img src="<?php echo THEME_URL; ?>_dev/img/products/1l.svg" alt="1l">
+                        <span>1 l</span>
+                    </div>
+                    <div class="avaliableCapacity--item">
+                        <img src="<?php echo THEME_URL; ?>_dev/img/products/5 l.svg" alt="1l">
+                        <span>5 l</span>
+                    </div>
+                    <div class="avaliableCapacity--item">
+                        <img src="<?php echo THEME_URL; ?>_dev/img/products/20 l.svg" alt="1l">
+                        <span>20 l</span>
+                    </div>
+                    <div class="avaliableCapacity--item">
+                        <img src="<?php echo THEME_URL; ?>_dev/img/products/120 l.svg" alt="1l">
+                        <span>120 l</span>
+                    </div>
+                    <div class="avaliableCapacity--item">
+                        <img src="<?php echo THEME_URL; ?>_dev/img/products/210 l.svg" alt="1l">
+                        <span>210 l</span>
+                    </div>
+                    <div class="avaliableCapacity--item">
+                        <img src="<?php echo THEME_URL; ?>_dev/img/products/1000 l.svg" alt="1l">
+                        <span>1000 l</span>
+                    </div>
+                    <div class="avaliableCapacity--item">
+                        <img src="<?php echo THEME_URL; ?>_dev/img/products/24 t.svg" alt="1l">
+                        <span>24 t</span>
+                    </div>
                 </div>
+            </div>
+            <div class="productMore">
+                <h2>Potrzebujesz więcej informacji?</h2>
+                <p>Odezwij się do nas, wyślemy Ci szczegółową broszurę informacyjną.</p>
+                <a href="#" class="buttonAzure">Wyślij wiadomość</a>
             </div>
         </div>
         <div class="productComplementary">

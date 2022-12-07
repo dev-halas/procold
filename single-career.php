@@ -5,7 +5,7 @@
 ?>
 
     
-    <main class="post">
+    <main class="post career">
         <section class="postHeader">
             <div class="container">
                 <div class="postHeader--img">
@@ -18,7 +18,7 @@
             <div class="postContent">
                 <div class="postContent--top">
                     <p class="postContent--author">
-                        <?php echo get_the_author_meta('display_name', $author_id); ?>
+                        
                     </p>
                     <div class="postContent--cta">
                         <a href="#">
@@ -42,10 +42,6 @@
                     W instalacji chłodniczej znajduje się ciecz stanowiąca nośnik energii. Jest ona cały czas sprężana i rozprężana. W przypadku powstania nawet najmniejszej nieszczelności ciecz pod ciśnieniem będzie wydostawać się na zewnątrz. Wpłynie to na znaczące zmniejszenie wydajności całej instalacji, jednak jest to tylko jeden z wielu negatywnych skutków jakie mogą powstać. Dlatego też należy wykonywać cykliczne badania potwierdzające szczelność całej instalacji. Z tego artykułu dowiesz, co czeka Twoją instalację, gdy nie zareagujesz odpowiednio wcześnie.
                 </div>
                 
-                <div class="postContent--bottom">
-                    <a href="<?php echo esc_url(home_url('/')) ?>" class="postBackHomepage">Wróć</a>
-                    <span><?php echo the_date(); ?></span>
-                </div>
 
             </div>
             <div class="postSidebar">
@@ -54,7 +50,7 @@
             <div class="colorsLine bottomLineLeft"></div>
         </section>
 
-        <?php get_template_part('/libs/home/homeBlog'); ?>
+
         
     </main>
 

@@ -130,5 +130,7 @@
     
 <!-- Javascript-->
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaPiQlYXG53c8H0c9UxK_zT2WZxyPghe0&callback=initMap"></script>
+<script src="<?php echo THEME_URL ?>public/map.js"></script>
 <script src="<?php echo THEME_URL ?>public/bundle.js"></script>
 

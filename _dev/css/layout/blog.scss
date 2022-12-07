@@ -1,3 +1,29 @@
+.archiveHeader {
+    position: relative;
+    min-height: 400px;
+    padding-bottom: 150px;
+    background-color: $white;
+    border-radius: 0 0 12vw 0;
+    -webkit-border-radius: 0 0 12vw 0;
+    -moz-border-radius: 0 0 12vw 0;
+    -ms-border-radius: 0 0 12vw 0;
+    -o-border-radius: 0 0 12vw 0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.articles {
+    margin-bottom: 150px;
+    padding-bottom: 50px;
+}
+
+.articlesLoop {
+    margin-top: -150px;
+}
+
+
 .blog {
     margin-bottom: 15vh;
 }
@@ -5,13 +31,18 @@
 .blog--articles {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    column-gap: 30px;
+    row-gap: 80px;
+    @include responsive('small') {
+        grid-template-columns: 1fr;
+    }
 }
 
 .article {
     grid-column: span 1;
+    position: relative;
 
-    img {
+    > img {
         border-radius: 10vw 0 0 0;
     }
     

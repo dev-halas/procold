@@ -12,6 +12,9 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 5vw;
+    @include responsive('small') {
+        row-gap: 10vh;
+    }
 }
 
 .productDetails--content {
@@ -126,3 +129,36 @@
 
 
 }
+
+.avaliableCapacity--inner {
+    display: flex;
+    gap: 20px;
+}
+
+.avaliableCapacity--item {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+
+    span {
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+        height: 60px;
+        text-align: end;
+    }
+}
+
+.productMore {
+    margin-top: 8vh;
+    @include responsive('small') {
+        margin-top: 5vh;
+    }
+
+    a {
+        margin-top: 30px;
+    }
+}
+
