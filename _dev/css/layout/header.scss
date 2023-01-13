@@ -91,8 +91,51 @@
 .headerLang {
     position: absolute;
     width: 8vw;
+    height: 10vh;
     right: 0;
-    top: 0
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ul {
+        list-style: none;
+    }
+
+    > ul {
+        width: 100%;
+    }
+
+    li {
+        padding: 5px 20px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .lang--active {
+        width: 100%;
+        position: relative;
+    }
+
+    .lang--more {
+        visibility: hidden;
+        height: 0;
+    }
+
+    .lang--more.--open {
+        visibility: visible;
+        height: auto;
+        position: absolute;
+        width: 80%;
+        top: 40px;
+        left: 10%;
+        li {
+            background-color: #1a3441;
+        }
+        li:hover {
+            opacity: .8;
+        }
+    }
 }
 
 

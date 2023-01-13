@@ -1,4 +1,4 @@
-<div class="homeBlog">
+<div class="homeBlog animate fadeIn">
     <div class="homeBlog--inner">
         <div class="homeBlog--nav">
             <div class="shiftedTitle">
@@ -29,38 +29,34 @@
                 <a href="#" class="article--all">zobacz wszystkie</a>
             </div>
         </div>
-        <div class="swiper homeBlog--articles">
-            <div class="swiper-wrapper">
-                <div class="homeArticle swiper-slide">
-                    <img src="<?php echo THEME_URL; ?>_dev/img/home/tło-kolor.jpg" alt="article-Img" class="homeArticle--img">
-                    <div class="homeArticle--content">
-                        <h2 class="homeBlog--title">Supercool do nowoczesnych instalacji chłodniczych.</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                        </p>
-                        <span>18.08.2022</span>
-                    </div>
+        <?php $post_query = new WP_Query( array( 'posts_per_page' => 8, )); ?>
+            <div class="swiper homeBlog--articles">
+            <?php if ( $post_query -> have_posts() ) : ?>
+                <div class="swiper-wrapper">
+                    <?php while ( $post_query->have_posts() ) : 
+                        $post_query->the_post(); 
+                        $title = get_the_title();
+                        $image = get_the_post_thumbnail_url();
+                        $post_excerpt = get_the_excerpt();
+                        $postLink = get_the_permalink();
+                        $date = get_the_date('d/m/Y');
+                    ?>
+                        <a href="<?php echo esc_url($postLink);?>" class="homeArticle swiper-slide">
+                            <img src="<?php echo esc_url($image); ?>" alt="<?php echo $title; ?>" class="homeArticle--img">
+                            <div class="homeArticle--content">
+                                <h2 class="homeBlog--title"><?php echo $title; ?></h2>
+                                <p>
+                                    <?php echo $post_excerpt; ?>
+                                </p>
+                                <span><?php echo $date; ?></span>
+                            </div>
+                        </a>
+                    <?php endwhile; ?>
                 </div>
-                <div class="homeArticle swiper-slide">
-                    <img src="<?php echo THEME_URL; ?>_dev/img/home/tło-kolor.jpg" alt="article-Img" class="homeArticle--img">
-                    <div class="homeArticle--content">
-                        <h2 class="homeBlog--title">Supercool do nowoczesnych instalacji chłodniczych.</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                        </p>
-                        <span>18.08.2022</span>
-                    </div>
-                </div>
-                <div class="homeArticle swiper-slide">
-                    <img src="<?php echo THEME_URL; ?>_dev/img/home/tło-kolor.jpg" alt="article-Img" class="homeArticle--img">
-                    <div class="homeArticle--content">
-                        <h2 class="homeBlog--title">Supercool do nowoczesnych instalacji chłodniczych.</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
-                        </p>
-                        <span>18.08.2022</span>
-                    </div>
-                </div>
+            <?php wp_reset_postdata(); ?>
+            <?php else : ?>
+                <h1 class="newsEmpty"><?php __('Brak artykułów do wyświetlenia'); ?></h1>
+            <?php endif; ?>
             </div>
         </div>
 

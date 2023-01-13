@@ -19,6 +19,14 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+
+    @include responsive('tablet') {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include responsive('small') {
+        grid-template-columns: 1fr;
+    }
 }
 
 .productsWrapper--half, .productsTwo--columns {
@@ -30,6 +38,14 @@
         height: 42px;
         margin-top: 10px;
         display: block;
+    }
+
+    @include responsive('tablet') {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include responsive('small') {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -51,15 +67,9 @@
         justify-self: flex-end;
     }
 
-    @include responsive('tablet') {
-        grid-column: span 2;
-    }
-
     @include responsive('small') {
-        grid-column: span 4;
         padding: 20px;
     }
-
 
 }
 

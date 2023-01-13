@@ -5,6 +5,7 @@
 .homeBlog--inner {
     margin-left: 10vw;
     display: grid;
+    margin-bottom: 5vh;
     grid-template-columns: repeat(12, 1fr);
     margin-right: -15%;
     @include responsive('tablet') {
@@ -37,20 +38,25 @@
 
 .homeArticle {
     background-color: $white;
-    border-radius: 10vw 10px 10px 10px;
-    -webkit-border-radius: 10vw 10px 10px 10px;
-    -moz-border-radius: 10vw 10px 10px 10px;
-    -ms-border-radius: 10vw 10px 10px 10px;
-    -o-border-radius: 10vw 10px 10px 10px;
-    @include responsive('small') {
+    border-radius: 6vw 10px 10px 10px;
+    -webkit-border-radius: 6vw 10px 10px 10px;
+    -moz-border-radius: 6vw 10px 10px 10px;
+    -ms-border-radius: 6vw 10px 10px 10px;
+    -o-border-radius: 6vw 10px 10px 10px;
+
+    @include responsive('small'){
         width: 80%;
     }
 }
 
 .homeArticle--img {
-    border-radius: 10vw 10px 10px 10px;
+    border-radius: 6vw 10px 10px 10px;
     min-width: 100%;
     object-fit: cover;
+    -webkit-border-radius: 6vw 10px 10px 10px;
+    -moz-border-radius: 6vw 10px 10px 10px;
+    -ms-border-radius: 6vw 10px 10px 10px;
+    -o-border-radius: 6vw 10px 10px 10px;
 }
 
 .homeArticle--content {

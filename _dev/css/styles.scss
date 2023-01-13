@@ -2,6 +2,7 @@
 
 @import "./base/reset.scss";
 @import "./base/core.scss";
+@import "./base/preload.scss";
 
 /* ------ Layouts ------ */
 
@@ -41,6 +42,9 @@
 
 @import "./layout/career.scss";
 
+@import "./layout/certs.scss";
+
+@import "./base/animations.scss";
 
 @import "./layout/footer/footer.scss";
 /* ------ Components ------ */

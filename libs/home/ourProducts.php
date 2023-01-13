@@ -1,12 +1,23 @@
+<?php 
+    $ourproduct_subtitle = get_field('ourproduct_subtitle');
+    $ourproduct_title = get_field('ourproduct_title');
+    $ourproduct_img = get_field('ourproduct_img');
+    $ourproduct_left_row1 = get_field('ourproduct_left_row1');
+    $ourproduct_left_row2 = get_field('ourproduct_left_row2');
+    $ourproduct_right_row1 = get_field('ourproduct_right_row1');
+    $ourproduct_right_row2 = get_field('ourproduct_right_row2');
+    $ourproduct_link = get_field('ourproduct_link');
+?>
+
 <div class="ourProducts">
-    <img src="<?php echo THEME_URL; ?>_dev/img/home/ourProduct--bg.jpeg" alt="" class="ourProducts--bg">
+    <img src="<?php echo THEME_URL; ?>_dev/img/home/ourProduct--bg.jpeg" alt="background" class="ourProducts--bg">
     <div class="shiftedTitle">
-        <span>POZNAJ</span>
-        <h2>zalety naszych produktów</h2>
+        <span><?php echo $ourproduct_subtitle; ?></span>
+        <h2><?php echo $ourproduct_title; ?></h2>
     </div>
-    <div class="container">
+    <div class="container animate">
         <div class="ourProducts--wrapper">
-            <div class="ourProduct--col">
+            <div class="ourProduct--col fadeInLeft d-200">
                 <div class="ourProduct--item">
                     <div class="ourProduts--icon">
                         <svg id="wall-clock" xmlns="http://www.w3.org/2000/svg" width="77.216" height="77.216" viewBox="0 0 77.216 77.216">
@@ -22,10 +33,7 @@
                         </svg>
                     </div>
                     <div class="ourProducts--text">
-                        <span>Wydłużona żywotność</span>
-                        <p>
-                            Produkcję płynów, oparliśmy na technologii dodatków organicznych o wydłużonej żywotności. Dzięki takiemu rozwiązaniu, Partnerzy mogą cieszyć się wydłużoną gwarancją naszych produktów.
-                        </p>
+                        <?php echo $ourproduct_left_row1; ?>
                     </div>
                 </div>
                 <div class="ourProduct--item">
@@ -38,18 +46,15 @@
                         </svg>
                     </div>
                     <div class="ourProducts--text">
-                        <span>Szybki kontakt</span>
-                        <p>
-                            Wiemy, jak frustrujące może być oczekiwanie w nieskończoność na ofertę lub odpowiedź na pytanie dotyczące produktu. Zadbaliśmy o to, aby czas obsługi był jak najszybszy.
-                        </p>
+                        <?php echo $ourproduct_left_row2; ?>
                     </div>
                 </div>
             </div>
-            <div class="ourProduct--image">
-                <img src="<?php echo THEME_URL;?>_dev/img/home/factory.jpeg" alt="ourProducts">
-                <img src="<?php echo THEME_URL;?>_dev/img/home/factory--shadow.jpeg" class="factory--shadow">
+            <div class="ourProduct--image fadeIn d-400">
+                <img src="<?php echo esc_url($ourproduct_img['url']); ?>" alt="ourProducts">
+                <img src="<?php echo THEME_URL;?>_dev/img/home/factory--shadow.jpeg" class="factory--shadow" alt="shadow">
             </div>
-            <div class="ourProduct--col">
+            <div class="ourProduct--col fadeInRight d-200">
                 <div class="ourProduct--item">
                     <div class="ourProduts--icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="84.326" height="84.326" viewBox="0 0 84.326 84.326">
@@ -60,10 +65,7 @@
                         </svg>
                     </div>
                     <div class="ourProducts--text">
-                        <span>Gwarancja jakości</span>
-                        <p>
-                            Do produkcji naszych wyrobów używamy surowców, które pochodzą bezpośrednio od producentów. Odrzucamy surowce, pochodzące z procesów regeneracji lub recyklingu.
-                        </p>
+                        <?php echo $ourproduct_right_row1; ?>
                     </div>
                 </div>
                 <div class="ourProduct--item">
@@ -73,15 +75,14 @@
                         </svg>
                     </div>
                     <div class="ourProducts--text">
-                        <span>Networking</span>
-                        <p>
-                            Wiedza i umiejętności, to największa wartość firmy. Kontaktujemy ze sobą firmy wykonawcze ze specjalistami od danych rozwiązań.
-                        </p>
+                        <?php echo $ourproduct_right_row2; ?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <a href="#" class="buttonOutline">zobacz produkty</a>
+    <a href="<?php echo esc_url($ourproduct_link['url']); ?>" class="buttonOutline">
+        <?php echo $ourproduct_link['title']; ?>
+    </a>
     <div class="colorsLine bottomLineCenter"></div>
 </div>

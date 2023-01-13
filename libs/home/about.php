@@ -1,24 +1,24 @@
-<div class="about" id="about">
+<?php 
+    $about_img = get_field('about_img');
+    $about_text = get_field('about_text');
+    $about_logos = get_field('about_logos');
+?>
+<div class="about animate" id="about">
     <img class="about--bg" src="<?php echo THEME_URL; ?>_dev/img/about-bg.jpeg" alt="">
     <div class="container">
         <div class="aboutInner">
-            <div class="aboutLeft">
-                <img src="<?php echo THEME_URL; ?>_dev/img/home/liquids.jpeg" alt="liquids">
-                <div class="aboutLogos">
-                    <img src="<?php echo THEME_URL; ?>_dev/img/home/tuv.jpeg" alt="certyfikat_TUV">
-                    <img src="<?php echo THEME_URL; ?>_dev/img/home/primus-logo.jpeg" alt="certyfikat_PRIMUS">
-                    <img src="<?php echo THEME_URL; ?>_dev/img/home/logo-iso.jpeg" alt="certyfikat_ISO">
-                </div>
+            <div class="aboutLeft fadeIn d-400">
+                <img src="<?php echo $about_img['url']; ?>" alt="liquids">
+                <?php if( $about_logos ): ?>
+                    <div class="aboutLogos">
+                        <?php foreach( $about_logos as $about_logo ): ?>
+                            <img src="<?php echo esc_url($about_logo['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
             </div>
-            <div class="aboutRight">
-                <div class="shiftedTitle">
-                    <span>PROCOLD</span>
-                    <h2>Kim jesteśmy</h2>
-                </div>
-                <div class="aboutText">
-                    Od samego początku powstania firmy PROCOLD, działamy jako producent płynów do transferu ciepła, w zastosowaniach przemysłowych i domowych (instalacje chłodnicze, klimatyzacyjne, grzewcze, pompy ciepła, kolektory słoneczne i inne). Nasze produkty, świetnie odnajdują się tam, gdzie wymagana jest ochrona przed zamarzaniem, korozją i powstawaniem osadów. Naturalna ciekawość nowych rzeczy i ciągłe badania rozwojowe, pozwalają nam dostarczać innowacyjne produkty wysokiej jakości.
-                </div>
-                <a href="#" class="buttonOutline">Zobacz produkty</a>
+            <div class="aboutRight fadeInRight d-400">
+                <?php echo $about_text; ?>
             </div>
         </div>  
     </div>

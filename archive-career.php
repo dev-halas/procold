@@ -34,11 +34,13 @@
                         $postLink = get_the_permalink();
                         $date = get_the_date('d/m/Y');
                     ?>
-                        <article class="article">
+                        <article class="article animate fadeIn d-200">
                             <div class="careerIcon">
                                 <img src="<?php echo THEME_URL; ?>_dev/img/career/technician.png" alt="icon">
                             </div>
-                            <img src="<?php echo esc_url($image); ?>" alt="<?php echo $title; ?>">
+                            <a href="<?php echo esc_url($postLink);?>">
+                                <img src="<?php echo esc_url($image); ?>" alt="<?php echo $title; ?>">
+                            </a>
                             <div class="article--content">
                                 <h2><?php echo $title; ?></h2>
                                 <div>

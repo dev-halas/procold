@@ -1,11 +1,21 @@
+<?php 
+    $services_subtitle = get_field('services_subtitle');
+    $services_title = get_field('services_title');
+    $services1 = get_field('services1');
+    $services2 = get_field('services2');
+    $services3 = get_field('services3');
+    $services4 = get_field('services4');
+    $services5 = get_field('services5');
+?>
+
 <div class="services">
     <div class="container">
-        <div class="shiftedTitle">
-            <span>USŁUGI</span>
-            <h2>dla naszych partnerów</h2>
+        <div class="shiftedTitle animate fadeIn d-200">
+            <span><?php echo $services_subtitle; ?></span>
+            <h2><?php echo $services_title; ?></h2>
         </div>
         <div class="services--wrapper">
-            <div class="services--col">
+            <div class="services--col animate fadeInLeft">
                 <div class="services--item">
                     <div class="services--icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="75.728" height="75.728" viewBox="0 0 75.728 75.728">
@@ -13,12 +23,7 @@
                         </svg>
                     </div>
                     <div class="services--text">
-                        <strong>
-                            Pomoc techniczna
-                        </strong>
-                        <p>
-                            Dysponujemy szczegółowymi danymi fizykochemicznymi płynów, na bazie glikolu propylenowego, etylenowego, mrówczanu potasu. W celach porównawczych opłacalności danego medium, możemy udostępnić na prośbę zainteresowanego.
-                        </p>
+                        <?php echo $services1; ?>
                     </div>
                 </div>
                 <div class="services--item">
@@ -35,16 +40,11 @@
                         </svg>
                     </div>
                     <div class="services--text">
-                        <strong>
-                            Utylizacja glikolu, mrówczanu potasu
-                        </strong>
-                        <p>
-                            Dysponujemy szczegółowymi danymi fizykochemicznymi płynów, na bazie glikolu propylenowego, etylenowego, mrówczanu potasu. W celach porównawczych opłacalności danego medium, możemy udostępnić na prośbę zainteresowanego.
-                        </p>
+                        <?php echo $services2; ?>
                     </div>
                 </div>
             </div>
-            <div class="services--col">
+            <div class="services--col animate fadeInRight">
                 <div class="services--item">
                     <div class="services--icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="74.627" height="74.615" viewBox="0 0 74.627 74.615">
@@ -57,12 +57,7 @@
                         </svg>
                     </div>
                     <div class="services--text">
-                        <strong>
-                            Badania laboratoryjne
-                        </strong>
-                        <p>
-                            Dla naszych partnerów służymy serwisem laboratoryjnym dla płynów na bazie glikolu, mrówczanu potasu i wody technologicznej.
-                        </p>
+                        <?php echo $services3; ?>
                     </div>
                 </div>
                 <div class="services--item">
@@ -75,12 +70,7 @@
                         </svg>
                     </div>
                     <div class="services--text">
-                        <strong>
-                            Wypożyczenie pomp
-                        </strong>
-                        <p>
-                            Na prośbę klienta oferujemy wynajem pomp, niezbędnych do wtłoczenia cieczy termalnych do instalacji.
-                        </p>
+                        <?php echo $services4; ?>
                     </div>
                 </div>
                 <div class="services--item">
@@ -90,12 +80,7 @@
                         </svg>
                     </div>
                     <div class="services--text">
-                        <strong>
-                            Wtłoczenie płynu do instalacji
-                        </strong>
-                        <p>
-                            Świadczymy również usługi wtłoczenia płynu, bezpośrednio do wszelkiego rodzaju instalacji.
-                        </p>
+                        <?php echo $services5; ?>
                     </div>
                 </div>
             </div>

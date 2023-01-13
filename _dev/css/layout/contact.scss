@@ -64,7 +64,7 @@
 }
 
 .contactForm {
-    input[type="text"], input[type="email"], textarea{
+    input[type="text"], input[type="email"], input[type="tel"], textarea{
         width: 100%;
         padding: 10px 20px;
         border: none;
@@ -113,6 +113,22 @@
             color: $darkBlue;
             margin-left: 0;
         }
+    }
+}
+
+.careerForm {
+    margin-top: 50px;
+    input[type="text"], input[type="email"], input[type="tel"], textarea {
+        background-color: #EDF2F3;
+    }
+    label {
+        color: $darkBlue;
+    }
+
+    .cvFile {
+        display: flex;
+        gap: 15px;
+        padding: 15px 3px;
     }
 }
 

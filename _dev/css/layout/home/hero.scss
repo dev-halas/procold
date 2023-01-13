@@ -233,3 +233,70 @@
         }
     }
 }
+
+
+.heroSlide {
+
+
+    .heroContent {
+        opacity: 0;
+    }
+}
+
+.heroSlide.active {
+    .heroImage {
+        img {
+            animation: heroImageFade .8s ease-in-out forwards;
+            -webkit-animation: heroImageFade .8s ease-in-out forwards;
+}   
+    }
+
+
+    .heroContent {
+        animation: heroTextFade .5s ease-in-out forwards;
+        -webkit-animation: heroTextFade .5s ease-in-out forwards;
+        animation-delay: .3s;
+    }
+}
+
+
+@keyframes heroImageFade {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+}
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+}
+}
+
+
+@keyframes heroTextFade {
+    0% {
+        opacity: 0;
+        transform: translateX(20%);
+        -webkit-transform: translateX(20%);
+        -moz-transform: translateX(20%);
+        -ms-transform: translateX(20%);
+        -o-transform: translateX(20%);
+}
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+}
+}

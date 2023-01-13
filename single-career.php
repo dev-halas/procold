@@ -42,7 +42,9 @@
                     W instalacji chłodniczej znajduje się ciecz stanowiąca nośnik energii. Jest ona cały czas sprężana i rozprężana. W przypadku powstania nawet najmniejszej nieszczelności ciecz pod ciśnieniem będzie wydostawać się na zewnątrz. Wpłynie to na znaczące zmniejszenie wydajności całej instalacji, jednak jest to tylko jeden z wielu negatywnych skutków jakie mogą powstać. Dlatego też należy wykonywać cykliczne badania potwierdzające szczelność całej instalacji. Z tego artykułu dowiesz, co czeka Twoją instalację, gdy nie zareagujesz odpowiednio wcześnie.
                 </div>
                 
-
+                <div class="careerForm">
+                    <?php echo do_shortcode('[contact-form-7 id="224" title="Career form PL -- mail"]'); ?>
+                </div>
             </div>
             <div class="postSidebar">
                 <?php dynamic_sidebar( 'recent_post_sidebar' ); ?>

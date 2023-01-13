@@ -1,87 +1,39 @@
-<div class="reviews">
-    <div class="shiftedTitle">
-        <span>zobcza co mówią</span>
-        <h2>nasi Klienci o nas</h2>
+<?php 
+    $reviews_subtitle = get_field('reviews_subtitle');
+    $reviews_title = get_field('reviews_title');
+    $reviews_name = get_field('reviews_name');
+    $reviews = get_field('reviews');
+    $reviews_next = get_field('reviews_next');
+    $reviews_prev = get_field('reviews_prev');
+?>
+
+<?php if(isset($reviews)): ?>
+<div class="reviews animate">
+    <div class="shiftedTitle fadeInBottomLow d-400">
+        <span><?php echo $reviews_subtitle; ?></span>
+        <h2><?php echo $reviews_title; ?></h2>
     </div>
-    <div class="reviewCarousel swiper">
+    <div class="reviewCarousel swiper fadeIn d-200">
         <div class="swiper-wrapper">
+            <?php while (have_rows('reviews')): the_row(); 
+                $review_name = get_sub_field('review_name');
+                $review_text = get_sub_field('review_text');
+                $review_img = get_sub_field('review_img');
+                $review_count = get_sub_field('review_count');
+            ?>
             <div class="review swiper-slide">
                 <div class="reviewImg">
-                    <img src="<?php echo THEME_URL; ?>_dev/img/home/logos/review-img.png" alt="">
-                    <span>ocena</span>
-                    <strong>5/5</strong>
+                    <img src="<?php echo esc_url($review_img['url']); ?>" alt="<?php echo $review_name; ?>">
+                    <span><?php echo $reviews_name; ?></span>
+                    <strong><?php echo $review_count; ?>/5</strong>
                 </div>
                 <div class="reviewText">
-                    <strong>Jan Kowalski</strong>
-                    <p>Firma Procold jest Naszym dostawcom Glikolu oraz preparatu do mycia wymienników ciepła już od kilku lat. Są bardzo solidnym partnerem biznesowym, słownym i bardzo solidnym POLECAM</p>
+                    <strong><?php echo $review_name; ?></strong>
+                    <?php echo $review_text; ?>
                 </div>
             </div>
-            <div class="review swiper-slide">
-                <div class="reviewImg">
-                    <img src="<?php echo THEME_URL; ?>_dev/img/home/logos/review-img.png" alt="">
-                    <span>ocena</span>
-                    <strong>5/5</strong>
-                </div>
-                <div class="reviewText">
-                    <strong>Jan Kowalski</strong>
-                    <p>Firma Procold jest Naszym dostawcom Glikolu oraz preparatu do mycia wymienników ciepła już od kilku lat. Są bardzo solidnym partnerem biznesowym, słownym i bardzo solidnym POLECAM</p>
-                </div>
-            </div>
-            <div class="review swiper-slide">
-                <div class="reviewImg">
-                    <img src="<?php echo THEME_URL; ?>_dev/img/home/logos/review-img.png" alt="">
-                    <span>ocena</span>
-                    <strong>5/5</strong>
-                </div>
-                <div class="reviewText">
-                    <strong>Jan Kowalski</strong>
-                    <p>Firma Procold jest Naszym dostawcom Glikolu oraz preparatu do mycia wymienników ciepła już od kilku lat. Są bardzo solidnym partnerem biznesowym, słownym i bardzo solidnym POLECAM</p>
-                </div>
-            </div>
-            <div class="review swiper-slide">
-                <div class="reviewImg">
-                    <img src="<?php echo THEME_URL; ?>_dev/img/home/logos/review-img.png" alt="">
-                    <span>ocena</span>
-                    <strong>5/5</strong>
-                </div>
-                <div class="reviewText">
-                    <strong>Jan Kowalski</strong>
-                    <p>Firma Procold jest Naszym dostawcom Glikolu oraz preparatu do mycia wymienników ciepła już od kilku lat. Są bardzo solidnym partnerem biznesowym, słownym i bardzo solidnym POLECAM</p>
-                </div>
-            </div>
-            <div class="review swiper-slide">
-                <div class="reviewImg">
-                    <img src="<?php echo THEME_URL; ?>_dev/img/home/logos/review-img.png" alt="">
-                    <span>ocena</span>
-                    <strong>5/5</strong>
-                </div>
-                <div class="reviewText">
-                    <strong>Jan Kowalski</strong>
-                    <p>Firma Procold jest Naszym dostawcom Glikolu oraz preparatu do mycia wymienników ciepła już od kilku lat. Są bardzo solidnym partnerem biznesowym, słownym i bardzo solidnym POLECAM</p>
-                </div>
-            </div>
-            <div class="review swiper-slide">
-                <div class="reviewImg">
-                    <img src="<?php echo THEME_URL; ?>_dev/img/home/logos/review-img.png" alt="">
-                    <span>ocena</span>
-                    <strong>5/5</strong>
-                </div>
-                <div class="reviewText">
-                    <strong>Jan Kowalski</strong>
-                    <p>Firma Procold jest Naszym dostawcom Glikolu oraz preparatu do mycia wymienników ciepła już od kilku lat. Są bardzo solidnym partnerem biznesowym, słownym i bardzo solidnym POLECAM</p>
-                </div>
-            </div>
-            <div class="review swiper-slide">
-                <div class="reviewImg">
-                    <img src="<?php echo THEME_URL; ?>_dev/img/home/logos/review-img.png" alt="">
-                    <span>ocena</span>
-                    <strong>5/5</strong>
-                </div>
-                <div class="reviewText">
-                    <strong>Jan Kowalski</strong>
-                    <p>Firma Procold jest Naszym dostawcom Glikolu oraz preparatu do mycia wymienników ciepła już od kilku lat. Są bardzo solidnym partnerem biznesowym, słownym i bardzo solidnym POLECAM</p>
-                </div>
-            </div>
+            <?php endwhile; ?>
+            
         </div><!-- end swiper wrapper-->
         
     <!-- If we need navigation buttons -->
@@ -94,10 +46,10 @@
                     </g>
                 </g>
             </svg>    
-            <span>poprzednia</span>
+            <span><?php echo $reviews_prev; ?></span>
         </div>
         <div class="nextReview">
-            <span>następna</span> 
+            <span><?php echo $reviews_next; ?></span> 
             <svg xmlns="http://www.w3.org/2000/svg" width="28.398" height="14.269" viewBox="0 0 28.398 14.269">
                 <g id="right-arrow" transform="translate(0 -127.369)">
                     <g id="Group_1" data-name="Group 1" transform="translate(0 127.369)">
@@ -112,7 +64,7 @@
     
 </div>
 
-
+<?php endif; ?>
 
 <script>
 

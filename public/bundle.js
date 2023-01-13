@@ -90,14 +90,18 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _css_styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _css_styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
 /* harmony import */ var _css_styles_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_styles_scss__WEBPACK_IMPORTED_MODULE_0__);
 __webpack_require__(1);
 __webpack_require__(2);
 __webpack_require__(3);
 __webpack_require__(4);
 __webpack_require__(5);
+__webpack_require__(6);
 __webpack_require__(7);
+
+__webpack_require__(8);
+
 
 
 
@@ -105,9 +109,24 @@ __webpack_require__(7);
 /* 1 */
 /***/ (function(module, exports) {
 
+const preloadPage = document.querySelector('.preload'); 
+
+const preloadHide = () => {
+    preloadPage.style.display="none";
+}
+
+window.setTimeout(preloadHide, 1200);
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
 const hamburger = document.querySelector('.hamburger');
 const header = document.querySelector('.header');
 const navLinks = document.querySelectorAll('.navLinks a');
+
+const langOpen = document.querySelector('.lang--active')
+const langMenu = document.querySelector('.lang--more')
 
 const pageHeight = window.innerHeight * 0.8;
 
@@ -122,6 +141,9 @@ navLinks.forEach((navLink) => {
 })
 
 
+langOpen.addEventListener('click', () => {
+    langMenu.classList.toggle('--open')
+})
 
 window.onscroll = () => {
     let top = window.scrollY;
@@ -131,45 +153,58 @@ window.onscroll = () => {
 
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports) {
 
-const slides = document.querySelectorAll('.heroSlide');
-const heroNavs = document.querySelectorAll('.heroSlide--navItem');
-const numberOfSlides = slides.length;
-let currentSlide = 0;
+const heroExist = document.querySelector('.hero')
 
-const nextSlide = () => {
-    slides.forEach((slide) => {
-        slide.classList.remove('active');
+const heroInit = () => {
+
+    const slides = document.querySelectorAll('.heroSlide');
+    const heroNavs = document.querySelectorAll('.heroSlide--navItem');
+    const numberOfSlides = slides.length;
+    let currentSlide = 0;
+
+    slides[0].classList.add('active')
+    heroNavs[0].classList.add('activeTab')
+
+    const nextSlide = () => {
+        slides.forEach((slide) => {
+            slide.classList.remove('active');
+        })
+
+        currentSlide++;
+
+        (currentSlide > numberOfSlides - 1) ? (currentSlide = 0) : currentSlide;
+
+        slides[currentSlide].classList.add('active');
+    }
+
+
+    heroNavs.forEach((heroNav, slideIndex) => {
+        heroNav.addEventListener('click', () => {
+            
+            slides.forEach((e) => {
+                e.classList.remove('active');
+            })
+
+            heroNavs.forEach((e) => {
+                e.classList.remove('activeTab')
+            })
+
+            slides[slideIndex].classList.add('active');
+            heroNavs[slideIndex].classList.add('activeTab');
+        })
     })
 
-    currentSlide++;
-
-    (currentSlide > numberOfSlides - 1) ? (currentSlide = 0) : currentSlide;
-
-    slides[currentSlide].classList.add('active');
 }
 
-
-heroNavs.forEach((heroNav, slideIndex) => {
-    heroNav.addEventListener('click', () => {
-        
-        slides.forEach((e) => {
-            e.classList.remove('active');
-        })
-
-        heroNavs.forEach((e) => {
-            e.classList.remove('activeTab')
-        })
-
-        slides[slideIndex].classList.add('active');
-        heroNavs[slideIndex].classList.add('activeTab');
-    })
-})
+if(heroExist) {
+    heroInit();
+}
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports) {
 
 const articles = new Swiper(".homeBlog--articles", {
@@ -207,7 +242,7 @@ const articles = new Swiper(".homeBlog--articles", {
 
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports) {
 
 const swiper = new Swiper('.logoCarousel', {
@@ -243,7 +278,7 @@ const swiper = new Swiper('.logoCarousel', {
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 const reviewContainer = document.querySelector('.reviews')
@@ -313,81 +348,115 @@ reviews.on('transitionStart', () => {
 }
 
 /***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
 /* 7 */
 /***/ (function(module, exports) {
 
-const calcField = document.querySelector('.calculatorField');
-const addNextCalc = document.querySelector('.addNextCalc');
-const calcResultButton = document.querySelector('.calcResult');
-const resultValue = document.querySelector('.resultValue')
+const calcExist = document.querySelector('.calculator')
+
+const calculator = () => {
+
+    const calcField = document.querySelector('.calculatorField');
+    const addNextCalc = document.querySelector('.addNextCalc');
+    const calcResultButton = document.querySelector('.calcResult');
+    const resultValue = document.querySelector('.resultValue')
 
 
-let result = 0;
+    let result = 0;
 
-//Getting all values even with cloned Node elements
-const getCalcValues = () => {
-    //resset result
-    result = 0;
-    const getAllFields = document.querySelectorAll('.calculatorField');
-    //loop for all inputs values from node and calculate
-    getAllFields.forEach((calc, index) => {
-        let pipeLength = parseInt(document.getElementsByName("pipeLength")[index].value)
-        let diametterInner = parseInt(document.getElementsByName("diameterInner")[index].value)
-        let tankCapacity = parseInt(document.getElementsByName("tankCapacity")[index].value)
+    //Getting all values even with cloned Node elements
+    const getCalcValues = () => {
+        //resset result
+        result = 0;
+        const getAllFields = document.querySelectorAll('.calculatorField');
+        //loop for all inputs values from node and calculate
+        getAllFields.forEach((calc, index) => {
+            let pipeLength = parseInt(document.getElementsByName("pipeLength")[index].value)
+            let diametterInner = parseInt(document.getElementsByName("diameterInner")[index].value)
+            let tankCapacity = parseInt(document.getElementsByName("tankCapacity")[index].value)
 
-        isNaN(pipeLength) ? pipeLength = 0 : pipeLength
-        isNaN(diametterInner) ? diametterInner = 0 : diametterInner
-        isNaN(tankCapacity) ? tankCapacity = 0 : tankCapacity
+            isNaN(pipeLength) ? pipeLength = 0 : pipeLength
+            isNaN(diametterInner) ? diametterInner = 0 : diametterInner
+            isNaN(tankCapacity) ? tankCapacity = 0 : tankCapacity
 
-        const pipeUnit = calc.querySelector('span.pipeUnit > input').checked
-        const diametterUnit = calc.querySelector('span.diametterUnit > input').checked
+            const pipeUnit = calc.querySelector('span.pipeUnit > input').checked
+            const diametterUnit = calc.querySelector('span.diametterUnit > input').checked
+            
+            const pipeToggle = calc.querySelector('span.pipeUnit > input')
+            const diametterToggle = calc.querySelector('span.diametterUnit > input')
+
+            // check Unit metter or centimetter
+            pipeUnit === true ? pipeLength *= 100 : pipeLength
+            diametterUnit === true ? diametterInner *= 100 : diametterInner
+
+
+            let capacity = (((Math.PI * (diametterInner / 2) ** 2) * pipeLength ) / 1000)
+
+            result = result + capacity + tankCapacity;
+
+            //toggle trigger
+            pipeToggle.addEventListener('click', getCalcValues)
+            diametterToggle.addEventListener('click', getCalcValues)
+
+        })
+
+        resultValue.innerText = (Math.round(result * 100) / 100) + ' L'
+    }
+
+    //Cloning inputs 
+    const duplicate = () => {
         
-        const pipeToggle = calc.querySelector('span.pipeUnit > input')
-        const diametterToggle = calc.querySelector('span.diametterUnit > input')
+        //clone calc fields
+        const calcClone = calcField.cloneNode(true);
+        // add cloned child
+        calcField.parentNode.appendChild(calcClone);
+        
+        // clear Inputs on clone Node element
+        const inputs = calcClone.querySelectorAll('input')
+        inputs.forEach(input => {
+            input.value = ''
+        })
+    }
 
-        // check Unit metter or centimetter
-        pipeUnit === true ? pipeLength *= 100 : pipeLength
-        diametterUnit === true ? diametterInner *= 100 : diametterInner
+    addNextCalc.addEventListener('click', duplicate)    
+    calcResultButton.addEventListener('click', getCalcValues)
 
-
-        let capacity = (((Math.PI * (diametterInner / 2) ** 2) * pipeLength ) / 1000)
-
-        result = result + capacity + tankCapacity;
-
-        //toggle trigger
-        pipeToggle.addEventListener('click', getCalcValues)
-        diametterToggle.addEventListener('click', getCalcValues)
-
-    })
-
-    resultValue.innerText = (Math.round(result * 100) / 100) + ' L'
 }
 
-//Cloning inputs 
-const duplicate = () => {
-    
-    //clone calc fields
-    const calcClone = calcField.cloneNode(true);
-    // add cloned child
-    calcField.parentNode.appendChild(calcClone);
-    
-    // clear Inputs on clone Node element
-    const inputs = calcClone.querySelectorAll('input')
-    inputs.forEach(input => {
-        input.value = ''
-    })
+if(calcExist) {
+    calculator();
 }
 
-addNextCalc.addEventListener('click', duplicate)
-calcResultButton.addEventListener('click', getCalcValues)
 
 
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+    const elements = document.querySelectorAll('.animate');
+    const options = {
+        root: null,
+        threshhold: 0.5,
+        rootMargin: '0px 0px -25% 0px'
+     };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if(!entry.isIntersecting) {
+                return;
+            }
+            entry.target.classList.add('animated');
+            observer.unobserve(entry.target)
+        })
+    }, options)
+
+    elements.forEach(element => observer.observe(element))
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ })
 /******/ ]);

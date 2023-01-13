@@ -20,12 +20,21 @@
     <link rel="stylesheet" href="<?php echo THEME_URL ?>public/main.css">
 </head>
 
-
-<body <?php body_class()?>>
+<body <?php body_class()?> >
+	<?php 
+	
+		$logo = get_field('logo', 'option');
+	
+	?>
+	<div class="preload">
+		<div class="preloadImg">
+			<img src="<?php echo THEME_URL; ?>_dev/img/preload.svg" alt="procold_logo">
+		</div>
+	</div>
 	<header class="header <?php if( is_front_page() ) : echo 'home--header'; else: echo 'site--header'; endif; ?>">
 		<div class="headerContainer">
 			<a class="headerLogo" href="<?php echo esc_url(home_url('/')) ?>">
-				<img src="<?php echo THEME_URL; ?>_dev/img/logo-white.png" alt="procold_logo">
+				<img src="<?php echo $logo['url'] ?>" alt="procold_logo">
 			</a>
 			<div class="hamburger">
 				<div class="hamburgerLines">
@@ -40,15 +49,20 @@
 					<?php wp_nav_menu(['theme_location' => 'main_nav']); ?>
 				</nav>
 				<!--
-				<div class="headerLang">
-					<ul>
-						<li><a href="#"></a>PL</li>
+
+				-->
+			</div>
+		</div>
+		<div class="headerLang">
+			<ul>
+				<li class="lang--active">
+					<span>PL</span>
+					<ul class="lang--more">
 						<li><a href="#"></a>EN</li>
 						<li><a href="#"></a>DE</li>
 					</ul>
-				</div>
-				-->
-			</div>
+				</li>
+			</ul>
 		</div>
 	</header>
 

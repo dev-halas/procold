@@ -1,10 +1,16 @@
-<div class="productsHeader">
+<?php 
+    $products_header_capacity = get_field('products_header_capacity');
+    $products_header_capacity_sub = get_field('products_header_capacity_sub');
+    $products_header_img = get_field('products_header_img');
+?>
+
+<div class="productsHeader animate">
     <div class="topLineCenter colorsLine"></div>
     <div class="productsHeader--inner" style="background-image: url()">
         <div class="productsHeader--radius"></div>
         <div class="container productsHeader--wrapper">
-            <img src="<?php echo THEME_URL; ?>_dev/img/products/produkty.png" alt="">
-            <div class="productsHeader--capacity">
+            <img class ="fadeIn d-1000" src="<?php echo $products_header_img['url']; ?>" alt="procold_products">
+            <div class="productsHeader--capacity fadeInLeft d-1200">
                 <svg xmlns="http://www.w3.org/2000/svg" width="63.275" height="63.275" viewBox="0 0 63.275 63.275">
                     <g id="Page-1" transform="translate(0.001 0.001)">
                         <g id="_029---Measuring-Area" data-name="029---Measuring-Area" transform="translate(-0.001 -0.001)">
@@ -19,8 +25,8 @@
                     </g>
                 </svg>
                 <div>
-                    <strong>Pojemności</strong>
-                    <p>dostosowane do Twoich potrzeb</p>
+                    <strong><?php echo $products_header_capacity; ?></strong>
+                    <p><?php echo $products_header_capacity_sub; ?></p>
                 </div>
             </div>
         </div>

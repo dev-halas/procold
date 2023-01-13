@@ -3,12 +3,11 @@
     min-height: 400px;
     padding-bottom: 150px;
     background-color: $white;
-    border-radius: 0 0 12vw 0;
-    -webkit-border-radius: 0 0 12vw 0;
-    -moz-border-radius: 0 0 12vw 0;
-    -ms-border-radius: 0 0 12vw 0;
-    -o-border-radius: 0 0 12vw 0;
-    
+    border-radius: 0 0 6vw 0;
+    -webkit-border-radius: 0 0 6vw 0;
+    -moz-border-radius: 0 0 6vw 0;
+    -ms-border-radius: 0 0 6vw 0;
+    -o-border-radius: 0 0 6vw 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,9 +41,15 @@
     grid-column: span 1;
     position: relative;
 
-    > img {
-        border-radius: 10vw 0 0 0;
-    }
+    a img {
+        border-radius: 6vw 0 0 0;
+        -webkit-border-radius: 6vw 0 0 0;
+        -moz-border-radius: 6vw 0 0 0;
+        -ms-border-radius: 6vw 0 0 0;
+        -o-border-radius: 6vw 0 0 0;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+}
     
     transition: all .3s ease-in-out ;
     -webkit-transition: all .3s ease-in-out ;
