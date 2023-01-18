@@ -33,6 +33,9 @@
     grid-column: span 3;
     padding: 3vw;
     background-color: $white;
+    @include responsive('small') {
+        grid-column: span 4;
+    }
 }
 
 .postSidebar {
@@ -51,6 +54,10 @@
 
     li {
         padding-bottom: 15px;
+    }
+
+    @include responsive('small') {
+        grid-column: span 4;
     }
 }
 
@@ -153,6 +160,6 @@
 
     img {
         object-fit: cover;
-        min-width: 100%;
+        margin: auto;
     }
 }

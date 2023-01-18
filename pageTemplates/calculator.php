@@ -17,8 +17,8 @@
 
 <main class="calculator">
     <div class="calcPattern"></div>
-    <div class="container calcForm">
-        <div class="calculatorInner">
+    <div class="container calcForm animate">
+        <div class="calculatorInner fadeIn d-600">
             <div class="calculatorFields">
                 <div class="calculatorField">
                     <div class="pipeLength">
@@ -61,7 +61,7 @@
                 </div>
             </div>
         </div>
-        <img src="<?php echo THEME_URL; ?>_dev/img/telefon-kalkulator.png" alt="calculator" class="calcBG">
+        <img src="<?php echo THEME_URL; ?>_dev/img/telefon-kalkulator.png" alt="calculator" class="calcBG fadeInRight d-600">
 
     </div>
     

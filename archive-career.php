@@ -9,7 +9,7 @@
     <main class="career">
         <div class="archiveHeader">
             <div class="colorsLine topLineCenter"></div>
-            <div class="shiftedTitle">
+            <div class="shiftedTitle animate fadeIn d-800">
                 <span>PROCOLD</span>
                 <h2>Kariera</h2>
             </div>
@@ -34,7 +34,7 @@
                         $postLink = get_the_permalink();
                         $date = get_the_date('d/m/Y');
                     ?>
-                        <article class="article animate fadeIn d-200">
+                        <article class="article animate fadeIn d-600">
                             <div class="careerIcon">
                                 <img src="<?php echo THEME_URL; ?>_dev/img/career/technician.png" alt="icon">
                             </div>

@@ -48,9 +48,11 @@
 				<nav class="navLinks">
 					<?php wp_nav_menu(['theme_location' => 'main_nav']); ?>
 				</nav>
-				<!--
-
-				-->
+				<ul class="headerLang--mobile">
+					<li><a href="#">PL</a></li>
+					<li><a href="#">EN</a></li>
+					<li><a href="#">DE</a></li>
+				</ul>
 			</div>
 		</div>
 		<div class="headerLang">

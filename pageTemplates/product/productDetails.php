@@ -34,7 +34,7 @@
             </div>
             <div class="productDesignation animate fadeIn d-200">
                 <?php if($product_designation): ?>
-                    <p><strong><?php echo $product_designation_title; ?>:</strong></p>
+                    <p><strong><?php echo $product_designation_title; ?></strong></p>
                     <div class="productDesignation--inner">
                         <?php foreach( $product_designation as $designation ): ?>
                             <div class="productDesignation--item">
@@ -47,7 +47,7 @@
             </div>
             <div class="avaliableCapacity animate fadeIn d-200">
                 <?php if($product_capacity): ?>
-                    <p><strong><?php echo $product_capacity_title; ?>:</strong></p>
+                    <p><strong><?php echo $product_capacity_title; ?></strong></p>
                     <div class="avaliableCapacity--inner">
                         <?php foreach( $product_capacity as $capacity ): ?>
                             <div class="avaliableCapacity--item">

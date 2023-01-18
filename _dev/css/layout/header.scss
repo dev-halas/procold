@@ -58,11 +58,20 @@
         top: 0;
         left: 0;
         height: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 }
 
 .navLinks {
     width: 100%;
+    @include responsive('tablet') {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        align-items: center;
+    }
 
     ul {
         display: flex;
@@ -85,6 +94,8 @@
             font-weight: 600;
         }
     }
+
+
 
 }
 
@@ -136,7 +147,12 @@
             opacity: .8;
         }
     }
+
+    @include responsive('tablet') {
+        display: none;
+    }
 }
+
 
 
 .hamburger{
@@ -291,4 +307,14 @@
     animation: headerFade .5s both;
     -webkit-animation: headerFade .5s both;
     box-shadow: 0 20px 30px rgb(0 0 0 / 20%);
+}
+
+.headerLang--mobile {
+    display: none;
+    @include responsive('tablet') {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        font-size: 18px;
+    }
 }

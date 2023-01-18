@@ -21,7 +21,7 @@
                         <?php echo get_the_author_meta('display_name', $author_id); ?>
                     </p>
                     <div class="postContent--cta">
-                        <a href="#">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo the_permalink(); ?>">
                             <img src="<?php echo THEME_URL; ?>_dev/img/blog/facebook.svg" alt="">
                         </a>
                         <a href="#">
