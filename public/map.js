@@ -1,9 +1,9 @@
 let map; 
 
 function initMap() {
-    const pinMap = { lat: 52.39999116824737, lng: 16.935112998336315 };
+    const pinMap = { lat: 51.969176857161344, lng: 17.530155061361796 };
     const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 16,
+      zoom: 14,
       center: pinMap,
       disableDefaultUI: true,
       styles: [

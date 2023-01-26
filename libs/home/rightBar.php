@@ -4,6 +4,8 @@
 	$fb = get_field('facebook_link', 'option');
 	$insta = get_field('instagram_link', 'option');
 	$yt = get_field('youtube_link', 'option');
+    $linkedin = get_field('linkedin_link', 'option');
+    $tiktok = get_field('tiktok_link', 'option');
 ?>
 <div class="rightBar">
     <div class="social_icons">
@@ -26,6 +28,22 @@
         <a href="<?php echo esc_url($yt); ?>" target="_blank" class="youtube">
             <svg id="Group_2" data-name="Group 2" xmlns="http://www.w3.org/2000/svg" width="20.742" height="14.694" viewBox="0 0 20.742 14.694">
                 <path id="Path_8" data-name="Path 8" d="M20.453,62.124a2.317,2.317,0,0,0-1.86-1.9,66.659,66.659,0,0,0-16.442,0,2.316,2.316,0,0,0-1.861,1.9,42.379,42.379,0,0,0,0,9.884,2.316,2.316,0,0,0,1.861,1.9,66.66,66.66,0,0,0,16.442,0,2.315,2.315,0,0,0,1.86-1.9A42.373,42.373,0,0,0,20.453,62.124Zm-11.811,8.4V63.61l5.186,3.457Z" transform="translate(0 -59.72)" fill="#fff"/>
+            </svg>
+        </a>
+        <a href="<?php echo esc_url($linkedin); ?>" target="_blank" class="youtube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20.252" height="19.358" viewBox="0 0 20.252 19.358">
+                <g id="linkedin-2" transform="translate(0 0.668)">
+                    <path id="Path_646" data-name="Path 646" d="M2.456-.668A2.263,2.263,0,1,0,2.4,3.845h.028A2.264,2.264,0,1,0,2.456-.668Zm0,0" fill="#fff"/>
+                    <path id="Path_647" data-name="Path 647" d="M8.109,198.313h4.341v13.061H8.109Zm0,0" transform="translate(-7.853 -192.684)" fill="#fff"/>
+                    <path id="Path_648" data-name="Path 648" d="M229.469,188.625a5.439,5.439,0,0,0-3.912,2.2v-1.894h-4.341v13.061h4.341V194.7a2.976,2.976,0,0,1,.143-1.06,2.376,2.376,0,0,1,2.227-1.587c1.571,0,2.2,1.2,2.2,2.954v6.987h4.341V194.5C234.467,190.492,232.325,188.625,229.469,188.625Zm0,0" transform="translate(-214.215 -183.303)" fill="#fff"/>
+                </g>
+            </svg>
+        </a>
+        <a href="<?php echo esc_url($tiktok); ?>" target="_blank" class="youtube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17.007" height="19.358" viewBox="0 0 17.007 19.358">
+                <g id="tik-tok" transform="translate(-31.423 -0.39)">
+                    <path id="Path_649" data-name="Path 649" d="M48.421,5.237a4.877,4.877,0,0,1-2.947-.985A4.878,4.878,0,0,1,43.525.39H40.365V9.027l0,4.731A2.865,2.865,0,1,1,38.4,11.042V7.833a6.22,6.22,0,0,0-.911-.067A6.061,6.061,0,0,0,32.93,9.8a5.939,5.939,0,0,0,.268,8.19,6.166,6.166,0,0,0,.571.5,6.061,6.061,0,0,0,3.715,1.256,6.22,6.22,0,0,0,.911-.067,6.041,6.041,0,0,0,3.375-1.688,5.917,5.917,0,0,0,1.775-4.211l-.016-7.064a8.009,8.009,0,0,0,4.9,1.665V5.236h-.009Z" style="fill: #fff"/>
+                </g>
             </svg>
         </a>
     </div>

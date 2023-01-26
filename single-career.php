@@ -2,6 +2,13 @@
     get_header();
     the_post();
 
+    //social Links
+		$fb = get_field('facebook_link', 'option');
+		$insta = get_field('instagram_link', 'option');
+		$yt = get_field('youtube_link', 'option');
+		$linkedin = get_field('linkedin_link', 'option');
+		$tiktok = get_field('tiktok_link', 'option');
+
 ?>
 
     
@@ -21,18 +28,25 @@
                         
                     </p>
                     <div class="postContent--cta">
-                        <a href="#">
-                            <img src="<?php echo THEME_URL; ?>_dev/img/blog/facebook.svg" alt="">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo the_permalink(); ?>" target="_blank">
+                            <img src="<?php echo THEME_URL; ?>_dev/img/blog/facebook.svg" alt="procold_facebook">
+                        </a>
+                        <a href="<?php echo esc_url($insta); ?>" target="_blank">
+                            <img src="<?php echo THEME_URL; ?>_dev/img/blog/instagram.svg" alt="procold_instagram">
+                        </a>
+                        <a href="<?php echo esc_url($yt); ?>" target="_blank">
+                            <img src="<?php echo THEME_URL; ?>_dev/img/blog/youtube.svg" alt="procold_youtube">
+                        </a>
+                        <a href="<?php echo esc_url($linkedin); ?>" target="_blank">
+                            <img src="<?php echo THEME_URL; ?>_dev/img/blog/linkedin-2.svg" alt="procold_linkedin">
+                        </a>
+                        <a href="<?php echo esc_url($tiktok); ?>" target="_blank">
+                            <img src="<?php echo THEME_URL; ?>_dev/img/blog/tik-tok.svg" alt="procold_tik-tok">
                         </a>
                         <a href="#">
-                            <img src="<?php echo THEME_URL; ?>_dev/img/blog/instagram.svg" alt="">
+                            <img src="<?php echo THEME_URL; ?>_dev/img/blog/copy.svg" alt="procold_copy">
                         </a>
-                        <a href="#">
-                            <img src="<?php echo THEME_URL; ?>_dev/img/blog/youtube.svg" alt="">
-                        </a>
-                        <a href="#">
-                            <img src="<?php echo THEME_URL; ?>_dev/img/blog/copy.svg" alt="">
-                        </a>
+                        
                     </div>
                 </div>
 

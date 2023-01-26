@@ -49,33 +49,7 @@
             </div>
         </div>
     </div>
-    <?php if(have_rows('contact_details')): ?>
-        <div class="contactIcons container">
-            <?php while (have_rows('contact_details')): the_row(); 
-                $contact_icon = get_sub_field('contact_icon'); 
-                $contact_text = get_sub_field('contact_text'); 
-                $contact_phone = get_sub_field('contact_phone'); 
-                $contact_mail = get_sub_field('contact_mail'); 
-
-            ?>
-                <div class="contactIcon animate fadeIn d-200">
-                    <img src="<?php echo esc_url($contact_icon['url']); ?>" alt="sekretiariat">
-                    <div class="contactIcon--text">
-                        <?php echo $contact_text; ?>
-                    </div>
-                    <div class="contactIcon--cta">
-                        <a href="tel: <?php echo $contact_phone; ?>">
-                            <img src="<?php echo THEME_URL; ?>_dev/img/contact/phone.svg" alt="phone">
-                        </a>
-                        <a href="mailto: <?php echo $contact_mail; ?>">
-                            <img src="<?php echo THEME_URL; ?>_dev/img/contact/send-mail.svg" alt="mail">
-                        </a>
-                    </div>
-                </div>
-            <?php endwhile; ?>
-        </div>
-    <?php endif; ?>
-                
+   
 </main>
 
 <script src="<?php echo THEME_URL ?>public/map.js"></script>
